@@ -6,7 +6,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+
+  {% if title%}
+  <title>Captured Moments - {{ title }}</title>
+  {% else %}
+  <title>Captured Moments</title>
+  {% endif %}
 
   <!-- Bootstrap -->
   <!-- Font Awesome -->
@@ -25,7 +30,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark danger-color justify-content-between">
+  <nav class="navbar navbar-dark bg-dark justify-content-between fixed-top">
     <a class="navbar-brand" href="#">Captured <span>Moments</span></a>
     <form class="form-inline my-1">
       <div class="md-form form-sm my-0">
