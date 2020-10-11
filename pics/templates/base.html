@@ -6,7 +6,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+
+  {% if title%}
+  <title>Captured Moments - {{ title }}</title>
+  {% else %}
+  <title>Captured Moments</title>
+  {% endif %}
 
   <!-- Bootstrap -->
   <!-- Font Awesome -->
