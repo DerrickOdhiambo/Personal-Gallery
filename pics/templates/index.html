@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Gallery</h1>
+<h1 class="text-center">Gallery</h1>
 <div class="main">
   <div class="gallery">
+
     {% for image_item in display_images %}
     <div class="gallery-content">
-      <img src="{{ image_item.image.url }}" alt="">
+      <img src="{{ image_item.image.url }}" data-toggle="modal" data-target="#{{image_item.image_name|truncatechars:3}}"
+        alt="">
       <div class="overlay">
-        <button class="btn btn-transparent btn-sm" data-toggle="modal" data-target="#{{ image_item.id }}">
-          <p>{{ image_item.image_name }}</p>
-        </button>
+        <p>{{ image_item.image_name }} </p>
       </div>
 
       <!-- Modal -->
-      <div class="modal fade" id="{{ image_item.id}}" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+      <div class="modal fade" id="{{image_item.image_name|truncatechars:3}}" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="{{ image_item.id }}">{{ image_item.image_name }}</h5>
+              <h5 class="modal-title">{{ image_item.image_name }}
+              </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
