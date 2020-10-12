@@ -40,9 +40,6 @@ class Image(models.Model):
         return self.image_name
 
     def save_image(self):
-        '''
-        Saves image instance to db
-        '''
         self.save()
 
     @classmethod
