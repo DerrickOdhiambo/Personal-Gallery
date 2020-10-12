@@ -3,3 +3,96 @@ nav {
   justify-content: space-around;
   align-content: center;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.main .gallery {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  padding: 10px 0 0 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 1vh;
+  grid-auto-flow: dense;
+}
+.main .gallery .gallery-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+  border-radius: 2px;
+}
+.main .gallery .gallery-content:first-child {
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+}
+.main .gallery .gallery-content:nth-child(2n+3) {
+  grid-row-start: span 2;
+}
+.main .gallery .gallery-content:nth-child(4n+5) {
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+}
+.main .gallery .gallery-content:nth-child(6n+7) {
+  grid-row-start: span 1;
+}
+.main .gallery .gallery-content:nth-child(8n+9) {
+  grid-column-start: span 1;
+  grid-row-start: span 1;
+}
+.main .gallery .gallery-content img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  transition: 0.2s ease-in-out;
+}
+.main .gallery .gallery-content img:hover {
+  filter: brightness(1) grayscale(0);
+}
+.gallery-content .overlay {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+.gallery-content .overlay p{
+  font-weight: 650;
+  color: white;
+}
+#modal-image {
+  filter: brightness(1) grayscale(0);
+}
+
+
+@media only screen and (max-width: 769px){
+  .main .gallery {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 430px){
+  .main .gallery {
+    display: block;
+  }
+  .main .gallery .gallery-content {
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 1rem 0;
+
+  }
+  .main .gallery .gallery-content img {
+    display: block;
+    filter: brightness(1) grayscale(0);
+  }
+}
