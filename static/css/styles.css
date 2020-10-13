@@ -1,11 +1,16 @@
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Indie+Flower&family=Pangolin&display=swap');
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Crafty Girls',cursive;
+  background: #f2f4ef;
+}
+h1, .navbar-brand span {
+  color: #efb730;
+  font-weight: 650;
+}
+.navbar {
+  font-weight: 600;
 }
 .main {
   height: 100%;
